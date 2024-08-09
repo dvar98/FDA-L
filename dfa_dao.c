@@ -51,10 +51,17 @@ DFA* dfa_crear(const char* nombre_archivo){
     //estados finalizacion
     fgets(estado,2000,pf);
     dfa -> estados_aceptacion = malloc(sizeof(char*) * 10);
-    dfa ->num_estados_aceptacion
+    dfa ->num_estados_aceptacion = 0;
+    separador = strtok(estado, ",");
+    while (separador)
+    {
+        dfa -> estados_aceptacion[dfa-> num_estados_aceptacion] =  malloc(strlen(separador) +1);
+        strcpy(dfa -> estados_aceptacion[dfa -> num_estados_aceptacion], separador);
+        dfa -> num_estados_aceptacion++;
+        separador = strtok(NULL, ",");
 
-
-
+    }
+    
 
 
 
