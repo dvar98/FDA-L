@@ -18,7 +18,7 @@ typedef struct
     int num_transiciones;
     char* estado_inicial;
     char** estados_aceptacion;
-    int num_estados_aceotacion;
+    int num_estados_aceptacion;
 } DFA;
 
 DFA* dfa_crear(const char* nombre_archivo);

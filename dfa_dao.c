@@ -43,7 +43,21 @@ DFA* dfa_crear(const char* nombre_archivo){
         separador = strtok(NULL, ",");
     }
     
-    
+    //Leer estado inicial
+    fgets(estado,2000,pf);
+    dfa ->estado_inicial = malloc(strlen(estado)+1);
+    strcpy(dfa -> estado_inicial, estado);
+
+    //estados finalizacion
+    fgets(estado,2000,pf);
+    dfa -> estados_aceptacion = malloc(sizeof(char*) * 10);
+    dfa ->num_estados_aceptacion
+
+
+
+
+
+
 
 
     fclose(pf);
