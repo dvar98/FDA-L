@@ -85,8 +85,36 @@ DFA* dfa_crear(const char* nombre_archivo){
     return dfa;
 }
 
-void dfa_destruir(DFA* dfa){
+void dfa_destruir(DFA* dfa) {
+    // Liberar memoria de los estados
+    for (int i = 0; i < dfa->num_estados; i++) {
+        free(dfa->estados[i]);
+    }
+    free(dfa->estados);
 
-free(Transicion);
+    // Liberar memoria del alfabeto
+    for (int i = 0; i < dfa->num_simbolos; i++) {
+        free(dfa->alfabeto[i]);
+    }
+    free(dfa->alfabeto);
 
+    // Liberar memoria del estado inicial
+    free(dfa->estado_inicial);
+
+    // Liberar memoria de los estados de aceptación
+    for (int i = 0; i < dfa->num_estados_aceptacion; i++) {
+        free(dfa->estados_aceptacion[i]);
+    }
+    free(dfa->estados_aceptacion);
+
+    // Liberar memoria de las transiciones
+    for (int i = 0; i < dfa->num_transiciones; i++) {
+        free(dfa->transiciones[i].estado);
+        free(dfa->transiciones[i].simbolo);
+        free(dfa->transiciones[i].siguiente_estado);
+    }
+    free(dfa->transiciones);
+
+    // Liberar memoria del DFA
+    free(dfa);
 }
