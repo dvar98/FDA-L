@@ -16,7 +16,7 @@ DFA* dfa_crear(const char* nombre_archivo){
 
     // Obtener los estados
     char estado[2000];
-    fgets(estado,2000,nombre_archivo);
+    fgets(estado,2000,pf);
     DFA* dfa = malloc(sizeof(DFA));
     dfa -> estados = malloc(sizeof(char*) * 20);
     dfa -> num_estados = 0;
