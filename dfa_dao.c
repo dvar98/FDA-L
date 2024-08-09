@@ -30,7 +30,18 @@ DFA* dfa_crear(const char* nombre_archivo){
     }
 
     // Leer alfabeto
-
+    char alfabeto[2000];
+    fgets(alfabeto,2000,pf);
+    dfa->alfabeto = malloc(sizeof(char*) * 20);
+    dfa->num_simbolos = 0;
+    separador = strtok(alfabeto, ",");
+    while (separador)
+    {
+        dfa->alfabeto[dfa->num_simbolos] = malloc(strlen(separador) + 1);
+        strcpy(dfa->alfabeto[dfa->num_simbolos], separador);
+        dfa->num_simbolos++;
+        separador = strtok(NULL, ",");
+    }
     
     
 
