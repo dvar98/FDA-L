@@ -14,7 +14,7 @@ DFA* dfa_crear(const char* nombre_archivo){
     }
     
 
-    //Obtener los estados
+    // Obtener los estados
     char estado[2000];
     fgets(estado,2000,nombre_archivo);
     DFA* dfa = malloc(sizeof(DFA));
@@ -26,9 +26,12 @@ DFA* dfa_crear(const char* nombre_archivo){
         dfa -> estados[dfa -> num_estados] = malloc(strlen(separador) + 1);
         strcpy(dfa -> estados[dfa -> num_estados], separador);
         dfa -> num_estados++;
-        token
-
+        separador = strtok(NULL, ",");
     }
+
+    // Leer alfabeto
+
+    
     
 
 
