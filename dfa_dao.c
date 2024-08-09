@@ -121,6 +121,30 @@ void dfa_destruir(DFA* dfa) {
 
 
 int dfa_procesar_cadena(DFA* dfa, const char* cadena){
-
-
+    char* estado_actual = dfa->estado_inicial;
+    for (int i = 0; i < strlen(cadena); i++) {
+        char simbolo = cadena[i];
+        int encontrado = 0;
+        for (int j = 0; j < dfa->num_transiciones; j++) {
+            if (strcmp(dfa->transiciones[j].estado, estado_actual) == 0 &&
+                dfa->transiciones[j].simbolo[0] == simbolo) {
+                estado_actual = dfa->transiciones[j].siguiente_estado;
+                encontrado = 1;
+                break;
+            }
+        }
+        if (!encontrado) {
+            printf("Error: transición no definida\n");
+            return 0;
+        }
+    }
+    // Verificar si el estado actual es de aceptación
+    for (int i = 0; i < dfa->num_estados_aceptacion; i++) {
+        if (strcmp(estado_actual, dfa->estados_aceptacion[i]) == 0) {
+            printf("La cadena fue aceptada\n");
+            return 1;
+        }
+    }
+    printf("La cadena fue rechazada\n");
+    return 0;
 }
