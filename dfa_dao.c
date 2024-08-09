@@ -118,3 +118,9 @@ void dfa_destruir(DFA* dfa) {
     // Liberar memoria del DFA
     free(dfa);
 }
+
+
+int dfa_procesar_cadena(DFA* dfa, const char* cadena){
+
+
+}
