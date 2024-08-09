@@ -61,11 +61,25 @@ DFA* dfa_crear(const char* nombre_archivo){
         separador = strtok(NULL, ",");
 
     }
-    
 
-
-
-
+    // Leer transiciones
+    dfa->transiciones = malloc(sizeof(Transicion) * 100);
+    dfa->num_transiciones = 0;
+    char transicion[2000];
+    while (fgets(transicion, 2000, pf)) {
+        Transicion t;
+        char* estado = strtok(transicion, ",");
+        t.estado = malloc(strlen(estado) + 1);
+        strcpy(t.estado, estado);
+        char* simbolo = strtok(NULL, ",");
+        t.simbolo = malloc(strlen(simbolo) + 1);
+        strcpy(t.simbolo, simbolo);
+        char* siguiente_estado = strtok(NULL, ",");
+        t.siguiente_estado = malloc(strlen(siguiente_estado) + 1);
+        strcpy(t.siguiente_estado, siguiente_estado);
+        dfa->transiciones[dfa->num_transiciones] = t;
+        dfa->num_transiciones++;
+    }
 
     fclose(pf);
     return dfa;
