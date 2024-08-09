@@ -84,3 +84,9 @@ DFA* dfa_crear(const char* nombre_archivo){
     fclose(pf);
     return dfa;
 }
+
+void dfa_destruir(DFA* dfa){
+
+free(Transicion);
+
+}
