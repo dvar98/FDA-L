@@ -3,7 +3,7 @@
 
 int main(){
 
-    printf("Ingrese el nombre del archivo de configuracion:");
+    printf("Ingrese el nombre del archivo de configuracion: ");
     char pf[2000];
     scanf("%s", pf);
     DFA* dfa = dfa_crear(pf);
