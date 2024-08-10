@@ -122,7 +122,7 @@ void dfa_destruir(DFA* dfa) {
 
 int dfa_procesar_cadena(DFA* dfa, const char* cadena){
     char* estado_actual = dfa->estado_inicial;
-    for (int i = 0; i < strlen(cadena); i++) {
+    for (size_t i = 0; i < strlen(cadena); i++) {
         char simbolo = cadena[i];
         int encontrado = 0;
         for (int j = 0; j < dfa->num_transiciones; j++) {
