@@ -153,5 +153,4 @@ int obtener_indice_estado(DFA* dfa, char* estado) {
     }
     return -1; // Estado no encontrado
 }
-    return 0;
-}
+ 
