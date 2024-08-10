@@ -42,3 +42,18 @@ Para compilar el proyecto, usa el siguiente comando:
 gcc -o dfa_program main.c dfa.c
 ```
 
+Esto generara un ejecutable llamado `dfa_program`.
+
+## Instrucciones de Uso
+
+1. **Ejecuta el programa**:
+
+```sh
+./dfa_program
+```
+
+2. **Ingrese el nombre del archivo de configuracion**.Asegurarse de que el archivo siga el formato especificado (.txt)
+
+3. **Introduce una cadena de entrada que quieras procesar con el DFA**
+
+4. **El programa indicara si la cadena fue aceptada o rechazada**
