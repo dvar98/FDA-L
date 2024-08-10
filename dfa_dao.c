@@ -120,31 +120,38 @@ void dfa_destruir(DFA* dfa) {
 }
 
 
-int dfa_procesar_cadena(DFA* dfa, const char* cadena){
-    char* estado_actual = dfa->estado_inicial;
-    for (size_t i = 0; i < strlen(cadena); i++) {
+int dfa_procesar_cadena(DFA* dfa, char* cadena) {
+    int estado_actual = 0; // Estado inicial
+    for (int i = 0; i < strlen(cadena); i++) {
         char simbolo = cadena[i];
         int encontrado = 0;
         for (int j = 0; j < dfa->num_transiciones; j++) {
-            if (strcmp(dfa->transiciones[j].estado, estado_actual) == 0 &&
-                dfa->transiciones[j].simbolo[0] == simbolo) {
-                estado_actual = dfa->transiciones[j].siguiente_estado;
+            if (strcmp(dfa->transiciones[j].estado, dfa->estados[estado_actual]) == 0 &&
+                simbolo == dfa->transiciones[j].simbolo[0]) {
+                estado_actual = obtener_indice_estado(dfa, dfa->transiciones[j].siguiente_estado);
                 encontrado = 1;
                 break;
             }
         }
         if (!encontrado) {
-            printf("Error: transición no definida\n");
-            return 0;
+            return 0; // Transición no definida
         }
     }
-    // Verificar si el estado actual es de aceptación
     for (int i = 0; i < dfa->num_estados_aceptacion; i++) {
-        if (strcmp(estado_actual, dfa->estados_aceptacion[i]) == 0) {
-            printf("La cadena fue aceptada\n");
-            return 1;
+        if (strcmp(dfa->estados[estado_actual], dfa->estados_aceptacion[i]) == 0) {
+            return 1; // Cadena aceptada
         }
     }
-    printf("La cadena fue rechazada\n");
+    return 0; // Cadena rechazada
+}
+
+int obtener_indice_estado(DFA* dfa, char* estado) {
+    for (int i = 0; i < dfa->num_estados; i++) {
+        if (strcmp(dfa->estados[i], estado) == 0) {
+            return i;
+        }
+    }
+    return -1; // Estado no encontrado
+}
     return 0;
 }
