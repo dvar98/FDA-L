@@ -22,6 +22,7 @@ El archivo de configuración tiene el siguiente formato:
 
 ### Ejemplo de archivo de configuración
 
+```
 q0,q1,q2
 a,b
 q0
@@ -31,11 +32,13 @@ q1,b,q2
 q2,a,q0
 q2,b,q1
 
+```
+
 ## Instrucciones de Compilación
 
 Para compilar el proyecto, usa el siguiente comando:
 
 ```sh
 gcc -o dfa_program main.c dfa.c
-
+```
 
