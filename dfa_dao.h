@@ -23,6 +23,6 @@ typedef struct
 
 DFA* dfa_crear(const char* nombre_archivo);
 void dfa_destruir(DFA* dfa);
-int dfa_procesar_cadena(DFA* dfa, char* cadena);
+int dfa_procesar_cadena(DFA* dfa, const char* cadena);
 
 #endif
