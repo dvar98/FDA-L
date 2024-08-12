@@ -55,6 +55,14 @@ Esto generara un ejecutable llamado `dfa_program`.
 ```sh
 ./dfa_program
 ```
+### Nota sobre Permisos de Ejecución en Linux
+
+- Si estás utilizando un sistema operativo Linux, es posible que necesites otorgar permisos de ejecución al archivo compilado antes de poder ejecutarlo. Puedes hacer esto con el siguiente comando en la terminal:
+
+```sh
+chmod +x dfa_program
+```
+- Este comando permite que el archivo dfa_program sea ejecutable. Después de otorgar los permisos, puedes ejecutar el programa como se describe en las instrucciones anteriores.
 
 2. **Ingresar el Nombre del Archivo de Configuración**
 
