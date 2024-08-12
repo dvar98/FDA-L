@@ -36,6 +36,8 @@ q2,b,q1
 
 ## Instrucciones de Compilación
 
+Abrir en la carpeta donde guarde los archivos 
+
 Para compilar el proyecto, usa el siguiente comando:
 
 ```sh
@@ -59,7 +61,8 @@ Esto generara un ejecutable llamado `dfa_program`.
 4. **El programa indicara si la cadena fue aceptada o rechazada**
 
 
-##Integrantes 
+## Integrantes
+
 **Daniel Santiago Varela Guerrero**
 **Miguel Angel Velasco**
 **Sebastian Sabogal Castillo**
