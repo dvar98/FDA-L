@@ -57,3 +57,9 @@ Esto generara un ejecutable llamado `dfa_program`.
 3. **Introduce una cadena de entrada que quieras procesar con el DFA**
 
 4. **El programa indicara si la cadena fue aceptada o rechazada**
+
+
+##Integrantes 
+**Daniel Santiago Varela Guerrero**
+**Miguel Angel Velasco**
+**Sebastian Sabogal Castillo**
