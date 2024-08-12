@@ -63,6 +63,6 @@ Esto generara un ejecutable llamado `dfa_program`.
 
 ## Integrantes
 
-**Daniel Santiago Varela Guerrero**
-**Miguel Angel Velasco**
-**Sebastian Sabogal Castillo**
+- **Daniel Santiago Varela Guerrero**
+- **Miguel Angel Velasco**
+- **Sebastian Sabogal Castillo**
