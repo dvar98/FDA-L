@@ -38,6 +38,8 @@ q2,b,q1
 
 Abrir en la carpeta donde guarde los archivos 
 
+Abrar una terminal en la carpeta
+
 Para compilar el proyecto, usa el siguiente comando:
 
 ```sh
